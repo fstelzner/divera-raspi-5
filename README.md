@@ -2,7 +2,7 @@
 Divera Setup für den Raspberry Pi 5
 
 Vor Jahren haben wir bei uns in der Wache der [Freiwilligen Feuerwehr Brokstedt](https://www.feuerwehr-brokstedt.de) einen Divera-Wachenmonitor
-auf dem Raspberry Pi 4 aufgesetzt. Dazu haben wir im Wesentlichen [diese](https://help.divera247.com/pages/viewpage.action?pageId=44171296) Anleitung verwendet und für unsere Zwecke angepasst. 
+auf dem Raspberry Pi 4 aufgesetzt. Dazu haben wir im Wesentlichen [diese]([https://help.divera247.com/pages/viewpage.action?pageId=44171296](https://help.divera247.com/display/FAQ/RaspberryPi+-+Bildschirmschoner+automatisch+deaktivieren)) Anleitung verwendet und für unsere Zwecke angepasst. 
 
 Auf dem Raspberry Pi 5 kann diese Anleitung nicht mehr verwendet werden, da sie mit dem xscreensaver arbeitet, der unter Wayland nicht funktioniert.
 Mein Setup-Prozess habe ich hier dokumentiert, damit Du es einfacher hast. Fragen? Gerne jederzeit an f.stelzner@feuerwehr-brokstedt.de
