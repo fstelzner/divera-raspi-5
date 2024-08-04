@@ -41,11 +41,13 @@ So habe ich die Verzeichnisse angelegt:
 1. divera -> hier sind alle benötigten Scripte
 2. divera/depechen -> hier wird die die aktuelle Alarm-Depeche generiert, bevor sie an den Drucker gesendet und archiviert wird
 3. depechen/archive -> hier werden die ausgedruckten Depechen gelagert -> je nach Speicherkapazität solltest Du hier ggf. ab und zu aufräumen
+4. depechen/archive/depeche.log -> ein Logfile, um doppeltes Ausdrucken zu verhindern
 
 ```
 mkdir /home/pi/divera
 mkdir /home/pi/divera/depechen
 mkdir /home/pi/divera/depechen/archive
+touch /home/pi/divera/depechen/archive/depeche.log
 ```
 
 ### Step 3 Divera-Scripte per SSH ins Divera-Verzeichnis schreiben (z.B. /home/pi/divera )
@@ -58,7 +60,7 @@ vi /home/pi/divera/divera-alarm.sh
 vi /home/pi/divera/divera-print.py
 ```
 
-Beide Scripte müssen nun noch ausführbar gemacht werden:
+Die Scripte müssen nun noch ausführbar gemacht werden:
 
 ```
 chmod +x /home/pi/divera/start-chromium.sh
