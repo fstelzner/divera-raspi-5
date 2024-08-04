@@ -53,6 +53,7 @@ Nutze einen Command Line Editor Deiner Wahl, um die Dateien anzulegen. Die meist
 sich ja glücklicherweise mit VNC verbinden und die Dateien einfach mit dem grafischen Texteditor anlegen. Uncool, aber wenn es hilft ;-) 
 
 ```
+vi /home/pi/divera/start-chromium.sh
 vi /home/pi/divera/divera-alarm.sh
 vi /home/pi/divera/divera-print.py
 ```
@@ -60,12 +61,13 @@ vi /home/pi/divera/divera-print.py
 Beide Scripte müssen nun noch ausführbar gemacht werden:
 
 ```
+chmod +x /home/pi/divera/start-chromium.sh
 chmod +x /home/pi/divera/divera-alarm.sh
 chmod +x /home/pi/divera/divera-print.py
 ```
 
 ### Step 4 Notwendige Programme installieren & Pip-Environment einrichten
-Für das divera-alarm.sh benötigen wir [jq]()
+Für das divera-alarm.sh Script benötigen wir [jq]()
 
 ```
 sudo apt-get install jq
@@ -100,5 +102,6 @@ Die _/home/pi/.config/wayfire.ini_ muss am Ende um folgenden Eintrag ergänzt we
 
 ```
 [autostart]
-chromium = chromium-browser "https://app.divera247.com/monitor/1.html?autologin=DEIN-DIVERA-API-KEY" --kiosk --noerrdialogs --disable-infobars --no-first-run --start-fullscreen:q:
+autostart_wf_shell = false
+chromium = /home/pi/divera/start-chromium.sh
 ```
