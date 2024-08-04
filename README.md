@@ -93,3 +93,12 @@ Um das Environment wieder zu verlassen:
 ```
 deactivate
 ```
+
+### Step 5 Divera-Monitor-URL mit Chromium automatisch starten
+In Wayland ist auch hier der Autostart anders, da wir nicht mehr mit X arbeiten. -.config/lxsession/LXDE-pi/autostart- führt Euch also auf die falsche Fährte.
+Die _/home/pi/.config/wayfire.ini_ muss am Ende um folgenden Eintrag ergänzt werden. Die URL zu Deinem Divera-Wachmonitor muss Du natürlich noch anpassen.
+
+```
+[autostart]
+chromium = chromium-browser "https://app.divera247.com/monitor/1.html?autologin=DEIN-DIVERA-API-KEY" --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland  --start-fullscreen:q:
+```
