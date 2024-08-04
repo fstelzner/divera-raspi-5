@@ -49,6 +49,14 @@ Nutze einen Command Line Editor Deiner Wahl, um die Dateien anzulegen. Die meist
 sich ja glücklicherweise mit VNC verbinden und die Dateien einfach mit dem grafischen Texteditor anlegen. Uncool, aber wenn es hilft ;-) 
 
 ```
-vi /home/pi/divera/divera-alarm.py
+vi /home/pi/divera/divera-alarm.sh
 vi /home/pi/divera/divera-print.py
 ```
+
+Beide Scripte müssen nun noch ausführbar gemacht werden:
+
+```
+chmod +x /home/pi/divera/divera-alarm.sh
+chmod +x /home/pi/divera/divera-print.py
+```
+
