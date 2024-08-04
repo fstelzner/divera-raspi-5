@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Print divera output to default printer
+# Depeche als PDF anlegen
 
 import requests
 from fpdf import FPDF
