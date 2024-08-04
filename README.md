@@ -100,5 +100,5 @@ Die _/home/pi/.config/wayfire.ini_ muss am Ende um folgenden Eintrag ergänzt we
 
 ```
 [autostart]
-chromium = chromium-browser "https://app.divera247.com/monitor/1.html?autologin=DEIN-DIVERA-API-KEY" --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland  --start-fullscreen:q:
+chromium = chromium-browser "https://app.divera247.com/monitor/1.html?autologin=DEIN-DIVERA-API-KEY" --kiosk --noerrdialogs --disable-infobars --no-first-run --start-fullscreen:q:
 ```
