@@ -64,3 +64,32 @@ chmod +x /home/pi/divera/divera-alarm.sh
 chmod +x /home/pi/divera/divera-print.py
 ```
 
+### Step 4 Notwendige Programme installieren & Pip-Environment einrichten
+Für das divera-alarm.sh benötigen wir [jq]()
+
+```
+sudo apt-get install jq
+```
+
+#### Für die Druckfunktion:
+Mit Wayland auf dem Raspberry Pi 5 braucht man ein Environment, um _pip install_ nutzen zu können.
+Idealerweise gewöhnt man sich an, für jedes Projekt ein eigenes Environment anzulegen. Details und wieso, weshalb, warum gibt es [hier](https://www.raspberrypi.com/documentation/computers/os.html#python-on-raspberry-pi).
+In diesem Fall legen wir _divera_ an und aktivieren es:
+
+```
+python -m venv --system-site-packages divera
+source divera/bin/activate
+```
+
+Der Prompt sollte sich nun geändet haben, sodass Du Dich im Environment befindest.
+Jetzt können wir _pip install_ benutzen:
+
+```
+pip3 install fpdf2
+```
+
+Um das Environment wieder zu verlassen:
+
+```
+deactivate
+```
