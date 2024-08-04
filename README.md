@@ -104,4 +104,5 @@ Die _/home/pi/.config/wayfire.ini_ muss am Ende um folgenden Eintrag ergänzt we
 [autostart]
 autostart_wf_shell = false
 chromium = /home/pi/divera/start-chromium.sh
+divera = /home/pi/divera/divera-alarm.sh
 ```
