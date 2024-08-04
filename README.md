@@ -38,10 +38,14 @@ darauf zugreifen.
 Passe die Verzeichnisse gerne an, wie Du möchtest. Achte bei jeder Änderung auf die Referenzen in den Scripten und Befehlen.
 So habe ich die Verzeichnisse angelegt:
 
+1. divera -> hier sind alle benötigten Scripte
+2. divera/depechen -> hier wird die die aktuelle Alarm-Depeche generiert, bevor sie an den Drucker gesendet und archiviert wird
+3. depechen/archive -> hier werden die ausgedruckten Depechen gelagert -> je nach Speicherkapazität solltest Du hier ggf. ab und zu aufräumen
+
 ```
-mkdir /home/pi/divera # hier sind alle benötigten Scripte
-mkdir /home/pi/divera/depechen # hier wird die die aktuelle Alarm-Depeche generiert, bevor sie an den Drucker gesendet und archiviert wird
-mkdir /home/pi/divera/depechen/archive # hier werden die ausgedruckten Depechen gelagert -> je nach Speicherkapazität solltest Du hier ggf. ab und zu aufräumen
+mkdir /home/pi/divera
+mkdir /home/pi/divera/depechen
+mkdir /home/pi/divera/depechen/archive
 ```
 
 ### Step 3 Divera-Scripte per SSH ins Divera-Verzeichnis schreiben (z.B. /home/pi/divera )
