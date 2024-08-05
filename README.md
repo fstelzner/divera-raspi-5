@@ -22,7 +22,7 @@ Ich habe mich für [diese hier entschieden](https://amzn.to/3WQP0c6).
 3. Du sparst Zeit, wenn Du schon jetzt Wifi, Sprache, Tastaturlayout, Username + Password sowie SSH aktivierst
 4. SD Karte in den Pi einstecken und starten
 
-### Step 2 (optional) - VNC aktivieren
+### Step 2 (optional) - VNC aktivieren & Default-Printer bestimmen
 Da der Pi bei uns in der Wache ohne Tastatur und Maus gut versteckt und gesichert angebracht wird, ergibt es Sinn VNC zu aktivieren.
 
 ```
@@ -33,6 +33,10 @@ sudo raspi-config
 
 Unter Punkt 3 - Interface Options kannst Du dann den VNC Dienst einfach aktivieren und kannst dann zum Beispiel mit dem [VNC Viewer](https://www.realvnc.com/de/connect/download/viewer/)
 darauf zugreifen.
+
+Während Du nun die Funktionsfähigkeit des VNCs testest, kannst Du das gleich mit etwas Nützlichem verbinden.
+Nämlich der Einstellung des Standard Druckers. 
+Unter *PI > Preferences > Print Settings* kannst Du mit Rechtsklick "Set as Default" Deinen Lieblingsdrucker küren.
 
 ### Step 4 Verzeichnisse anlegen
 Passe die Verzeichnisse gerne an, wie Du möchtest. Achte bei jeder Änderung auf die Referenzen in den Scripten und Befehlen.
@@ -70,7 +74,7 @@ chmod +x /home/pi/divera/divera-print.py
 chmod +x /home/pi/divera/depechen-druck.sh
 ```
 
-### Step 4 Notwendige Programme installieren & Pip-Environment einrichten
+### Step 4 Notwendige Programme installieren & Python-Environment einrichten
 Für das divera-alarm.sh Script benötigen wir [jq]()
 
 ```
@@ -83,6 +87,7 @@ Idealerweise gewöhnt man sich an, für jedes Projekt ein eigenes Environment an
 In diesem Fall legen wir _divera_ an und aktivieren es:
 
 ```
+cd /home/pi/divera/
 python -m venv --system-site-packages divera
 source divera/bin/activate
 ```
@@ -99,6 +104,7 @@ Um das Environment wieder zu verlassen:
 ```
 deactivate
 ```
+Das Environment wurde nun im Ordner /home/pi/divera/ im gleichnamigen Unterordner divera angelegt. 
 
 ### Step 5 Divera-Monitor-URL mit Chromium automatisch starten
 In Wayland ist auch hier der Autostart anders, da wir nicht mehr mit X arbeiten. -.config/lxsession/LXDE-pi/autostart- führt Euch also auf die falsche Fährte.
@@ -109,4 +115,14 @@ Die _/home/pi/.config/wayfire.ini_ muss am Ende um folgenden Eintrag ergänzt we
 autostart_wf_shell = false
 chromium = /home/pi/divera/start-chromium.sh
 divera = /home/pi/divera/divera-alarm.sh
+```
+### Crontab für die Überprüfung und den Ausdruck der Depechen anlegen
+
+```
+crontab -e
+```
+
+dort dann die neue Zeile für Ausführung zu jeder Minute durchführen und etwaigen Output (kann nur Fehler-Output sein, da das Script selbst keine Ausgaben macht) zur Sicherheit in ein Logfile schreiben:
+```
+* * * * * /usr/bin/python3 /home/pi/divera/depechen-druck.sh >> /home/pi/divera/cron.log 2>&1
 ```
