@@ -105,6 +105,7 @@ Um das Environment wieder zu verlassen:
 deactivate
 ```
 Das Environment wurde nun im Ordner /home/pi/divera/ im gleichnamigen Unterordner divera angelegt. 
+Wenn Du python3 jetzt mit dieser Umgebung ausführen willst, dann geht das mit _/home/pi/divera/divera/bin/python3_ -> das wird im letzten Schritt beim Crontab nochmal wichtig.
 
 ### Step 5 Divera-Monitor-URL mit Chromium automatisch starten
 In Wayland ist auch hier der Autostart anders, da wir nicht mehr mit X arbeiten. -.config/lxsession/LXDE-pi/autostart- führt Euch also auf die falsche Fährte.
