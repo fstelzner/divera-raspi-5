@@ -58,6 +58,7 @@ sich ja glücklicherweise mit VNC verbinden und die Dateien einfach mit dem graf
 vi /home/pi/divera/start-chromium.sh
 vi /home/pi/divera/divera-alarm.sh
 vi /home/pi/divera/divera-print.py
+vi /home/pi/divera/depechen-druck.sh
 ```
 
 Die Scripte müssen nun noch ausführbar gemacht werden:
@@ -66,6 +67,7 @@ Die Scripte müssen nun noch ausführbar gemacht werden:
 chmod +x /home/pi/divera/start-chromium.sh
 chmod +x /home/pi/divera/divera-alarm.sh
 chmod +x /home/pi/divera/divera-print.py
+chmod +x /home/pi/divera/depechen-druck.sh
 ```
 
 ### Step 4 Notwendige Programme installieren & Pip-Environment einrichten
