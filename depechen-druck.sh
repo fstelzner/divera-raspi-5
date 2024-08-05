@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define variables
-WATCHED_DIR="/home/pi/depechen"  # Change this to your directory
+WATCHED_DIR="/home/pi/divera/depechen"  # Change this to your directory
 ARCHIVE_DIR="$WATCHED_DIR/archive"
 LOG_FILE="$ARCHIVE_DIR/depeche.log"
 
