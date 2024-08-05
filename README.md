@@ -122,7 +122,7 @@ divera = /home/pi/divera/divera-alarm.sh
 crontab -e
 ```
 
-dort dann die neue Zeile für Ausführung zu jeder Minute durchführen und etwaigen Output (kann nur Fehler-Output sein, da das Script selbst keine Ausgaben macht) zur Sicherheit in ein Logfile schreiben:
+dort dann die neue Zeile für Ausführung (Achtung: Python3 muss mit dem Environment geladen werden, in dem fpdf2 installiert wurde!) zu jeder Minute durchführen und etwaigen Output (kann nur Fehler-Output sein, da das Script selbst keine Ausgaben macht) zur Sicherheit in ein Logfile schreiben:
 ```
-* * * * * /usr/bin/python3 /home/pi/divera/depechen-druck.sh >> /home/pi/divera/cron.log 2>&1
+* * * * * /home/pi/divera/divera/bin/python3 /home/pi/divera/divera-print.py && /usr/bin/bash /home/pi/divera/depechen-druck.sh >> /home/pi/divera/cron.log 2>&1
 ```
